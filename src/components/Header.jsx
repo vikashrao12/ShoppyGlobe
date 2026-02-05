@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { setSearchText } from "../redux/searchSlice"
+import { FaCartShopping } from "react-icons/fa6";
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -35,7 +36,7 @@ const Header = () => {
           to="/cart"
           className="relative self-end sm:self-auto"
         >
-          🛒
+          <FaCartShopping size={32} />
           {totalItems > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 rounded-full">
               {totalItems}
