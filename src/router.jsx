@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
-import Home from "./components/pages/Home"
-import NotFound from "./components/pages/NotFound"
+import Home from "./pages/Home"
+import NotFound from "./pages/NotFound"
 import App from "./App"
 
 const appRouter = createBrowserRouter([
