@@ -1,16 +1,66 @@
-# React + Vite
+#  ShoppyGlobe – React E-Commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShoppyGlobe is a modern e-commerce frontend application built using **React**, **Redux Toolkit**, **React Router**, and **Tailwind CSS**.  
+It allows users to browse products, search items, view product details, and manage a shopping cart efficiently.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
 
-## React Compiler
+-  Product listing on home page
+-  Search products by name
+-  Product detail page
+-  Add products to cart
+-  Increase / Decrease quantity
+-  Remove items from cart
+-  Dynamic cart item count in header
+-  Total price calculation
+-  React Router based navigation
+-  Custom 404 (Not Found) page
+-  Responsive UI using Tailwind CSS
+-  Global state management with Redux Toolkit
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+##  Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React (Vite)
+- **State Management:** Redux Toolkit
+- **Routing:** React Router DOM
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+
+---
+
+##  Project Structure
+    src/
+      -Componetns/
+         -Header.jsx
+         -ProductItem.jsx
+      -hooks/
+         userProduct.js
+      -pages/
+         -cart.jsx
+         -Checkout.jsx
+         -Home.jsx
+         -NotFound.jsx
+         -ProductDetail.jsx
+         -ProductList.jsx
+       -redux/ 
+         -cartSlice.js
+         -searchSlice.js
+         -store.js
+       -App.jsx
+       -main.jsx
+       -router.jsx
+
+
+  ## How to run
+   - npm install
+   - npm run dev 
+        
+ 
+ 
+
+ 
+
