@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { addToCart } from "../redux/cartSlice"
+import { Link } from "react-router-dom"
 
 const ProductItem = ({ item }) => {
   const dispatch = useDispatch()
@@ -10,16 +11,19 @@ const ProductItem = ({ item }) => {
 
   return (
     <div className="bg-white p-4 rounded-lg shadow hover:shadow-md transition">
-      <img
-        src={item.thumbnail}
-        alt={item.title}
-        className="h-40 w-full object-cover rounded"
-        loading="lazy"
-      />
+      <Link to={`/product/${item.id}`}>
+        <img
+          src={item.thumbnail}
+          alt={item.title}
+          className="h-40 w-full object-cover rounded"
+          loading="lazy"
+        />
 
-      <h3 className="mt-2 font-semibold">
-        {item.title}
-      </h3>
+        <h3 className="mt-2 font-semibold">
+          {item.title}
+        </h3>
+      </Link>
+
 
       <p className="text-gray-600">
         ₹{item.price}
