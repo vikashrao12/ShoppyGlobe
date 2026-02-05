@@ -60,7 +60,8 @@ It allows users to browse products, search items, view product details, and mana
    - npm run dev 
         
  
- 
+ ## GitHub repository link
+    https://github.com/vikashrao12/ShoppyGlobe
 
  
 
