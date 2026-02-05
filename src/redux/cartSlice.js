@@ -7,7 +7,20 @@ const cartSlice = createSlice({
   },
   reducers: {
     addToCart: (state, action) => {
-      // logic baad me add karenge
+      const newItem = action.payload
+
+      const itemFound = state.cartItems.find(
+        (item) => item.id === newItem.id
+      )
+
+      if (itemFound) {
+        itemFound.qty += 1
+      } else {
+        state.cartItems.push({
+          ...newItem,
+          qty: 1
+        })
+      }
     }
   }
 })
