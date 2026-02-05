@@ -1,6 +1,12 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  increaseQty,
+  decreaseQty,
+  removeFromCart
+} from "../redux/cartSlice"
 
 const Cart = () => {
+  const dispatch = useDispatch()
   const cartData = useSelector((state) => state.cart.cartItems)
 
   const totalPrice = cartData.reduce(
@@ -23,7 +29,7 @@ const Cart = () => {
           {cartData.map((item) => (
             <div
               key={item.id}
-              className="flex items-center gap-4 bg-white p-4 rounded shadow"
+              className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded shadow"
             >
               <img
                 src={item.thumbnail}
@@ -31,22 +37,47 @@ const Cart = () => {
                 className="w-20 h-20 object-cover rounded"
               />
 
-              <div className="flex-1">
+              <div className="flex-1 text-center sm:text-left">
                 <h3 className="font-semibold">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600">
-                  ₹{item.price} × {item.qty}
+                  ₹{item.price}
                 </p>
               </div>
 
-              <p className="font-bold">
-                ₹{item.price * item.qty}
-              </p>
+              {/* Quantity buttons */}
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => dispatch(decreaseQty(item.id))}
+                  className="px-3 py-1 bg-gray-200 rounded"
+                >
+                  -
+                </button>
+
+                <span className="font-medium">
+                  {item.qty}
+                </span>
+
+                <button
+                  onClick={() => dispatch(increaseQty(item.id))}
+                  className="px-3 py-1 bg-gray-200 rounded"
+                >
+                  +
+                </button>
+              </div>
+
+              {/* Remove */}
+              <button
+                onClick={() => dispatch(removeFromCart(item.id))}
+                className="text-red-500 text-sm"
+              >
+                Remove
+              </button>
             </div>
           ))}
 
-          <div className="text-right mt-4">
+          <div className="text-right mt-6">
             <p className="text-lg font-semibold">
               Total: ₹{totalPrice}
             </p>

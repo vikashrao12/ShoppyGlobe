@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom"
+
+
 const Header = () => {
   return (
     <header className="bg-blue-600 text-white p-4">
@@ -5,8 +8,8 @@ const Header = () => {
         <h1 className="text-xl font-bold">ShoppyGlobe</h1>
 
         <nav className="space-x-4">
-          <a href="/" className="cursor-pointer hover:underline">Home</a>
-          <a href="/cart" className="cursor-pointer hover:underline">Cart</a>
+          <Link to="/" className="cursor-pointer hover:underline">Home</Link>
+          <Link to="/cart" className="cursor-pointer hover:underline">Cart</Link>
         </nav>
       </div>
     </header>
