@@ -4,10 +4,14 @@ import {
   decreaseQty,
   removeFromCart
 } from "../redux/cartSlice"
+import { useNavigate } from "react-router-dom"
+
 
 const Cart = () => {
   const dispatch = useDispatch()
   const cartData = useSelector((state) => state.cart.cartItems)
+  const navigate = useNavigate()
+
 
   const totalPrice = cartData.reduce(
     (total, item) => total + item.price * item.qty,
@@ -84,6 +88,13 @@ const Cart = () => {
           </div>
         </div>
       )}
+      {cartData.length == 0 ? "" : <button
+        onClick={() => navigate("/checkout")}
+        className="mt-3 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+      >
+        Checkout
+      </button>}
+
     </div>
   )
 }

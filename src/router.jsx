@@ -3,6 +3,7 @@ import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
 import App from "./App"
 import Cart from "./pages/Cart"
+import Checkout from "./pages/Checkout"
 
 const appRouter = createBrowserRouter([
   {
@@ -16,7 +17,12 @@ const appRouter = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />
+      },
+      {
+        path: "checkout",
+        element: <Checkout />
       }
+
     ]
   },
   {
