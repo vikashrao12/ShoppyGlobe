@@ -1,15 +1,15 @@
+import Header from "./components/Header"
+import { Outlet } from "react-router-dom"
 
 function App() {
-
-
   return (
-    <>
+    <div className="min-h-screen bg-gray-100">
+      <Header />
 
-      <p className="text-red-600">
-        Shoppy Global E-commerce Application
-      </p>
-
-    </>
+      <main className="p-4">
+        <Outlet />
+      </main>
+    </div>
   )
 }
 
